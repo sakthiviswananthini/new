@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>TASK 20</title>
+        <Style>
+            table
+            {
+                border:2px double rgb(163, 185, 82);
+                background-color: rgb(132, 162, 218);
+                font-family: 'Times New Roman', Times, serif;
+                height: 200px;
+                width:100px;
+            }
+            th
+            {
+              font-size: 25px;
+              border: 2px solid black;
+            }
+            input[type="button"]
+            {
+                width:300px;
+                border:none;
+            }
+            input[type="text"]
+            {
+                width:915px;
+                background-color: rgb(190, 35, 35);
+                border-radius: 3px;
+                border: none;
+            }
+            input[type="text"]:focus
+            {
+                background-color: rgb(233, 28, 28);
+                color:#997eca;
+            }
+            .eval
+            {
+                background-color: rgb(206,184,60);
+                border:none;
+            }
+            .c
+            {
+                background-color: rgb(172,50,50);
+                border: none;
+            }
+            .pm
+            {
+                background-color: rgb(64,64,170);
+                border:none;
+            }
+            .c:hover
+            {
+                background-color: rgb(64,64,170);
+                border:none;
+            }
+            .pm:hover
+            {
+                background-color:blue;
+                color:#fff;
+            }
+            .eval:hover
+            {
+                background-color: gold;
+                border:none;
+            }
+        </Style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th colspan="4">TEQ calc</th>
+            </tr>
+            <tr>
+    <td colspan="2"><input type="text" name="" id="inp"></td>
+<td><input type="button" value="C" class="C" onclick="n.clr()"></td>
+<td><input type="button" value="x" class="C" onclick="n.clrs()"></td>
+
+            </tr>
+            <tr>
+   <td><input type="button" value="1" onclick="n.view(1)"></td>
+   <td><input type="button" value="2" onclick="n.view(2)"></td>
+    <td><input type="button" value="3" onclick="n.view(3)"></td>
+<td><input type="button" value="/" class="pm" onclick="n.view('/')"></td>
+            </tr>
+            <tr>
+<td><input type="button" value="4" onclick="n.view(4)"></td>
+<td><input type="button" value="5" onclick="n.view(5)"></td>
+<td><input type="button" value="6" onclick="n.view(6)"></td>
+<td><input type="button" value="-" class="pm" onclick="n.view('-')"></td>
+            </tr>
+            <tr>
+<td><input type="button" value="7" onclick="n.view(7)"></td>
+<td><input type="button" value="8" onclick="n.view(8)"></td>
+<td><input type="button" value="9" onclick="n.view(9)"></td>
+<td><input type="button" value="+" class="pm"onclick="n.view('+')"></td>
+                
+            <tr>
+<td><input type="button" value="." onclick="n.view('.')"></td>
+<td><input type="button" value="0" onclick="n.view(0)"></td>
+<td><input type="button" value="=" class="eval" onclick="n.compute()"></td>
+<td><input type="button" value="*" class="pm"onclick="n.view('*')"></td>
+            </tr>
+        </table>
+        <script>
+            class Calculator
+            {
+                view(n)
+                {
+                    document.getElementById('inp').value+=n
+                }
+                clr()
+                {
+                    document.getElementById('inp').value=''
+                }
+                clrs()
+                {
+                    var x=document.getElementById('inp').value
+                    var y=parseInt(x)
+                    document.getElementById('inp').value=parseInt(y/10)
+                    // document.getElementById('inp').;
+                }
+                compute()
+                {
+                    var x=document.getElementById('inp').value
+                    let y=eval(x)
+                    document.getElementById('inp').value=y
+                }
+            }
+            let n=new Calculator()
+        </script>
+    </body>
+  
